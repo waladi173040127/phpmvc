@@ -1,12 +1,12 @@
-<?php 
-class App{
-	//property
-	protected $controller = 'Home';
-	protected $method = 'index';
-	protected $params = [];
+ <?php 
 
-	public function __construct(){
-		$url = $this->parseURL();
+ class App {
+ 	protected  $controller = 'Home';
+ 	protected $method = 'index';
+ 	protected $params = [];
+ 	public function __construct(){
+ 		echo "EKO!";
+ 		$url = $this->parseURL();
  		//cotroller
  		if (file_exists('../app/controllers/' . $url[0]. '.php')) {
  			$this->controller = $url[0];
@@ -30,11 +30,10 @@ class App{
  		}
  		//jalankan controler dan method . seta kirimkan params jika ada
  		call_user_func_array([$this->controller, $this->method], $this->params);
+ 	}
 
-		
-	}
 
-	public function parseURL(){
+ 	public function parseURL(){
  		if (isset($_GET['url'])) {
  			$url = rtrim($_GET['url'], '/');
  			$url = filter_var($url, FILTER_SANITIZE_URL);
@@ -42,5 +41,4 @@ class App{
  			return $url;
  		}
  	}
-
-}
+ }
