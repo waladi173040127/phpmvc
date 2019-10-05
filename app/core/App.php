@@ -5,7 +5,6 @@
  	protected $method = 'index';
  	protected $params = [];
  	public function __construct(){
- 		echo "EKO!";
  		$url = $this->parseURL();
  		//cotroller
  		if (file_exists('../app/controllers/' . $url[0]. '.php')) {
