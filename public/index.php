@@ -1,5 +1,5 @@
 <?php 
 
-require_once '../app/';
+require_once '../app/init.php';
 
  ?>
