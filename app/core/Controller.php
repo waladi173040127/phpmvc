@@ -1,6 +1,6 @@
 <?php 
 
-class Controlles {
+class Controller {
 
 
 
